@@ -14,7 +14,9 @@
     --background-color: #fff;
     --nav-hoverfocus: #404BBF;
     --section-nav-gap: 24px;
-    --transition-duration-and-func: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-duration-and-func: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container {
@@ -104,6 +106,8 @@ span {
     color: var(--main-textcolor);
     font-weight: 500;
     text-decoration: none;
+
+    transition: var(--transition-duration-and-func);
 }
 
 .site-nav,
@@ -127,8 +131,6 @@ span {
 .site-nav a:hover,
 .site-nav a:focus {
     color: var(--nav-hoverfocus);
-
-    transition: var(--transition-duration-and-func);
 }
 
 .auth-nav a{
@@ -139,13 +141,13 @@ span {
     font-size: 16px;
     line-height: var(--section-nav-gap);
     text-decoration: none;
+
+    transition: var(--transition-duration-and-func);
 }
 
 .auth-nav a:hover,
 .auth-nav a:focus {
     color: var(--nav-hoverfocus);
-
-    transition: var(--transition-duration-and-func);
 }
 
 .menu-link {
@@ -153,7 +155,6 @@ span {
 
     position: relative;
     display: block;
-
 }
 
 .menu-link::after {
@@ -170,7 +171,7 @@ span {
     border-radius: 2px;
 
     opacity: 1;
-    transition: width 250ms var(--timing-function);
+    
 }
 
 .hero {
@@ -317,6 +318,8 @@ span {
     height: 40px;
     border-radius: 50%;
     background-color: var(--logoweb-color) ;
+
+    transition: var(--transition-button);
 }
 
 .social-list-icon {
@@ -326,8 +329,6 @@ span {
 .social-list-link:hover,
 .social-list-link:focus {
     background: var(--nav-hoverfocus);
-
-    transition: var(--transition-duration-and-func);
 }
 
 .button-primary {
@@ -344,13 +345,14 @@ span {
     line-height: 24px;
 
     padding: 16px 32px;
+
+    transition: var(--transition-button);
+    
 }
 
 .button-primary:hover,
 .button-primary:focus {
     background: var(--nav-hoverfocus);
-
-    transition: var(--transition-duration-and-func);
 }
 
 .button-secondary:hover, 
@@ -358,8 +360,6 @@ span {
     background: var(--nav-hoverfocus);
     color: var(--header-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    
-    transition: var(--transition-duration-and-func);
 }
 
 .button-secondary {
@@ -376,6 +376,8 @@ span {
 
     padding: 12px 24px;
     margin-right: var(--section-nav-gap);
+
+    transition: var(--transition-button);
 }
 
 .section-team {
@@ -432,14 +434,14 @@ span {
     color: #8E8F99;
     border: 1px solid #8E8F99;
     border-radius: 4px; 
+
+    transition: var(--transition-button), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-list-link:hover,
 .customer-list-link:focus {
     color: #404BBF;
     border: 1px solid #404BBF;
-
-    transition: var(--transition-duration-and-func);
 }
 
 .section-portfolio {
@@ -476,6 +478,10 @@ span {
     /*outline: 2px solid tomato;*/ 
 }
 
+/*.item:hover .overlay {
+    transform: translate(0,0);
+}*/
+
 .card {
     width: 360px;
 }
@@ -484,15 +490,11 @@ span {
     background: #FFFFFF;
     
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-
-    transition: var(--transition-duration-and-func);
 }
 
 .link:hover .overlay-card,
 .link:focus .overlay-card  {
     transform: translate(0,0);
-
-    transition: var(--transition-duration-and-func);
 }
 
 
@@ -543,8 +545,7 @@ span {
     overflow: auto;
 
     transform: translate(0, 100%);
-    transition: var(--transition-duration-and-func);
-
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-text {
@@ -626,6 +627,8 @@ span {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+
+    transition: var(--transition-button);
 }
 
 .social-media-icon {
@@ -635,8 +638,6 @@ span {
 .social-media-link:hover,
 .social-media-link:focus {
     background: #31D0AA;
-
-    transition: var(--transition-duration-and-func);
 }
 
 .foot {
@@ -698,6 +699,8 @@ span {
     border-radius: 50%;
     border: 1px solid var(--footer-color);
     background-color: transparent; 
+    
+    transition: var(--transition-button);
 }
 
 .modal-close-button:hover,
