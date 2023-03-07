@@ -14,10 +14,8 @@
     --background-color: #fff;
     --nav-hoverfocus: #404BBF;
     --section-nav-gap: 24px;
-    --transition-duration-and-func: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-button: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-                        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   }
 
 .container {
     margin-left: auto;
@@ -107,7 +105,7 @@ span {
     font-weight: 500;
     text-decoration: none;
 
-    transition: var(--transition-duration-and-func);
+    transition: color var(--transition);
 }
 
 .site-nav,
@@ -142,7 +140,7 @@ span {
     line-height: var(--section-nav-gap);
     text-decoration: none;
 
-    transition: var(--transition-duration-and-func);
+    transition: color var(--transition);
 }
 
 .auth-nav a:hover,
@@ -319,7 +317,7 @@ span {
     border-radius: 50%;
     background-color: var(--logoweb-color) ;
 
-    transition: var(--transition-button);
+    transition: color var(---transition), background-color var(--transition);
 }
 
 .social-list-icon {
@@ -346,7 +344,7 @@ span {
 
     padding: 16px 32px;
 
-    transition: var(--transition-button);
+    transition: color var(--transition), background-color var(--transition);
     
 }
 
@@ -359,6 +357,7 @@ span {
 .button-secondary:focus {
     background: var(--nav-hoverfocus);
     color: var(--header-color);
+    border: var(--nav-hoverfocus);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -377,7 +376,7 @@ span {
     padding: 12px 24px;
     margin-right: var(--section-nav-gap);
 
-    transition: var(--transition-button);
+    transition: color var(--transition), background-color var(--transition);
 }
 
 .section-team {
@@ -435,7 +434,9 @@ span {
     border: 1px solid #8E8F99;
     border-radius: 4px; 
 
-    transition: var(--transition-button), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--transition), 
+                background-color var(--transition), 
+                border var(--transition);
 }
 
 .customer-list-link:hover,
@@ -545,7 +546,7 @@ span {
     overflow: auto;
 
     transform: translate(0, 100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition);
 }
 
 .card-text {
@@ -628,7 +629,7 @@ span {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
 
-    transition: var(--transition-button);
+    transition: color var(--transition), background-color var(--transition) ;
 }
 
 .social-media-icon {
@@ -660,6 +661,10 @@ span {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+
+    opacity: 1;
+
+    transition: opacity var(---transition);
 }
 
 .backdrop.is-hidden {
@@ -668,11 +673,14 @@ span {
     pointer-events: none;
     }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
 
     width: 408px;
     height: 576px;
@@ -681,10 +689,13 @@ span {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
-    
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition);
 }
 
 .modal-close-button {
+    cursor: pointer;
+
     position: absolute;
     display: flex;
     justify-content: center;
@@ -700,13 +711,17 @@ span {
     border: 1px solid var(--footer-color);
     background-color: transparent; 
     
-    transition: var(--transition-button);
+    transition: color var(--transition), background-color var(--transition);
 }
 
 .modal-close-button:hover,
 .modal-close-button:focus {
     background: var(--nav-hoverfocus);
     border: var(--nav-hoverfocus);
+}
+
+.modal-close-button-icon {
+    transition: fill var(--transition);
 }
 
 .modal-close-button:hover .modal-close-button-icon,
